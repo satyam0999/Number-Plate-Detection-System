@@ -45,4 +45,62 @@ Download the TensorFlow Models pretrained models from the TensorFlow Model Zoo a
 python setup_tfod.py
 ```
 
+3. Create Label Map
+Define the labels for the detection classes (e.g., license plates) and create a label map file.
+
+```bash
+python create_label_map.py
+```
+
+4. Create TF Records
+Generate TF records from the provided images for training and testing the model.
+
+```bash
+python generate_tfrecord.py -x Tensorflow/workspace/images/train -l Tensorflow/workspace/annotations/label_map.pbtxt -o Tensorflow/workspace/annotations/train.record
+python generate_tfrecord.py -x Tensorflow/workspace/images/test -l Tensorflow/workspace/annotations/label_map.pbtxt -o Tensorflow/workspace/annotations/test.record
+```
+
+5. Copy Model Config to Training Folder
+Copy the pretrained model configuration file to the training folder.
+
+```bash
+python copy_model_config.py
+```
+
+6. Update Config For Transfer Learning
+Adjust the model configuration for transfer learning by updating the pipeline configuration file.
+
+```bash
+python update_config_for_transfer_learning.py
+```
+
+7. Train the Model
+Train the model using the specified configuration and pipeline.
+
+```bash
+python train_model.py
+```
+8. Evaluate the Model
+Evaluate the trained model using the evaluation script.
+
+```bash
+python evaluate_model.py
+```
+
+9. Load Train Model From Checkpoint
+Load the trained model from the checkpoint for inference.
+
+```bash
+python load_model_from_checkpoint.py
+```
+
+10. Detect from an Image
+Use the trained model to detect license plates in an image.
+
+```bash
+python detect_from_image.py
+```
+
+
+
 
