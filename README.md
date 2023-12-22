@@ -35,4 +35,14 @@ Ensure necessary paths are set up for the project by running the provided script
 
 ```bash
 python setup_paths.py
+```
+
+
+### 2. Download TF Models Pretrained Models and Install TFOD
+Download the TensorFlow Models pretrained models from the TensorFlow Model Zoo and install the TensorFlow Object Detection (TFOD) API.
+
+```bash
+python setup_tfod.py
+```
+
 
