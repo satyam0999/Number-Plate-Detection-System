@@ -1,6 +1,6 @@
 # Number-Plate-Detection-System
 
-# Number Plate Detection System
+
 
 The Number Plate Detection System is a computer vision project that uses TensorFlow's Object Detection API to identify and localize license plates in images. This system can be useful for applications such as automated toll collection, parking management, and traffic monitoring.
 
@@ -45,6 +45,8 @@ Download the TensorFlow Models pretrained models from the TensorFlow Model Zoo a
 python setup_tfod.py
 ```
 
+## Data Preparation
+
 ### 3. Create Label Map
 Define the labels for the detection classes (e.g., license plates) and create a label map file.
 
@@ -60,6 +62,8 @@ python generate_tfrecord.py -x Tensorflow/workspace/images/train -l Tensorflow/w
 python generate_tfrecord.py -x Tensorflow/workspace/images/test -l Tensorflow/workspace/annotations/label_map.pbtxt -o Tensorflow/workspace/annotations/test.record
 ```
 
+## Model Configuration
+
 ### 5. Copy Model Config to Training Folder
 Copy the pretrained model configuration file to the training folder.
 
@@ -74,18 +78,25 @@ Adjust the model configuration for transfer learning by updating the pipeline co
 python update_config_for_transfer_learning.py
 ```
 
+## Training
+
 ### 7. Train the Model
 Train the model using the specified configuration and pipeline.
 
 ```bash
 python train_model.py
 ```
+
+## Evaluation
+
 ### 8. Evaluate the Model
 Evaluate the trained model using the evaluation script.
 
 ```bash
 python evaluate_model.py
 ```
+
+## Inference
 
 ### 9. Load Train Model From Checkpoint
 Load the trained model from the checkpoint for inference.
